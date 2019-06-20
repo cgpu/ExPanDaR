@@ -50,7 +50,7 @@ prepare_missing_values_graph <- function(df, ts_id, no_factors = FALSE) {
                        gather_cols = names(df)[2:ncol(df)])
   mv$variable <- factor(mv$variable, levels = names(df)[2:ncol(df)])
 
-  ggplot2::ggplot(mv, ggplot2::aes_string("variable", ts_id)) +
+  ggplot2::ggplot(mv, ggplot2::aes_string(ts_id, "variable")) +
     ggplot2::theme(panel.background = ggplot2::element_blank(),
                    axis.ticks = ggplot2::element_blank(),
                    axis.text.x = ggplot2::element_text(angle = 90),

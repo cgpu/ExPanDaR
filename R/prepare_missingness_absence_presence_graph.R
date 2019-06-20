@@ -63,7 +63,7 @@ prepare_missingness_absence_presence_graph <- function(df, ts_id, no_factors = F
   mv$binary_value[(mv$value!=0)] <- "yes";
   mv$binary_value <- factor(mv$binary_value, levels = unique(mv$binary_value))
 
-  ggplot2::ggplot(mv, ggplot2::aes_string( "variable", ts_id)) +
+  ggplot2::ggplot(mv, ggplot2::aes_string(ts_id, "variable")) +
     ggplot2::theme(panel.background = ggplot2::element_blank(),
                    axis.ticks = ggplot2::element_blank(),
                    axis.text.x = ggplot2::element_text(angle = 90, vjust = 0.8),

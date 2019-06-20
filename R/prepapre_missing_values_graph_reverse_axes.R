@@ -21,7 +21,7 @@
 #' prepare_missing_values_graph(russell_3000, ts_id="period")
 #' @export
 
-prepare_missing_values_graph <- function(df, ts_id, no_factors = FALSE) {
+prepapre_missing_values_graph_reverse_axes <- function(df, ts_id, no_factors = FALSE) {
   # Make devtools:check() and CRAN happy
   value <- NULL
   if(! is.data.frame(df)) stop("df needs to be a dataframe")

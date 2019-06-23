@@ -21,13 +21,8 @@
 #' prepare_missing_values_graph(russell_3000, ts_id="period")
 #' @export
 
-prepare_missingness_absence_presence_graph <- function(df, ts_id, no_factors = FALSE) {
+prepare_missingness_absence_presence_graph <- function(df, ts_id, no_factors = FALSE){
   # Make devtools:check() and CRAN happy
-
-  df = sparse_df_tech_replicates
-  ts_id = 'class'
-  no_factors = FALSE
-
   value <- NULL
   if(! is.data.frame(df)) stop("df needs to be a dataframe")
   if (! ts_id %in% names(df)) stop("'ts_id' needs to be present in data frame 'df'")
@@ -72,5 +67,9 @@ prepare_missingness_absence_presence_graph <- function(df, ts_id, no_factors = F
                    legend.title = ggplot2::element_text(size = 8)) +
     ggplot2::labs(fill = "missing values\n") +
     ggplot2::geom_tile(ggplot2::aes(fill = binary_value), colour="white") +
-    ggplot2::scale_fill_manual(values = c("#011936", "#ea4931"), name= paste0("Any missing","\n", "values?", guide = guide_legend(reverse = FALSE))
-}
+    ggplot2::scale_fill_manual(values = c("#011936", "#ea4931"),
+                               name= paste0("Any missing","\n", "values?",
+                                            guide = guide_legend(reverse = FALSE)
+                                            )
+                               )
+  }

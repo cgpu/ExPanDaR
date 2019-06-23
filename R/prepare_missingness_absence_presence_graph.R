@@ -69,5 +69,6 @@ prepare_missingness_absence_presence_graph <- function(df, ts_id, no_factors = F
     ggplot2::labs(fill = "missing values\n") +
     ggplot2::geom_tile(ggplot2::aes(fill = binary_value), colour="white") +
     ggplot2::scale_fill_manual(values = c("#ea4931", "#011936"),
-                               name   = paste0("Any ", "\n", "missing","\n", "values?"), guide = guide_legend(reverse = TRUE))
+                               name   = paste0("Any ", "\n", "missing","\n", "values?"),
+                               guide = guide_legend(reverse = TRUE))
   }
